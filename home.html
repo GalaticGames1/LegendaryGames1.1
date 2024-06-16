@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legendary Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cdn.discordapp.com/attachments/1188974807350509640/1250926397220720660/360_F_417440234_w6uhv93WE60EYsYy.png?ex=666cb77e&is=666b65fe&hm=bb6bb5706cb03f76e7e301050b23b4c5256506ae800836036710968a76b8aaaf&');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 15px;
+            margin: 10px;
+        }
+        .navbar a, .navbar button {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            background-color: #6c757d; /* Cinza para os botões */
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar img {
+            max-height: 50px;
+        }
+        .games-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 20px;
+            border-radius: 10px;
+            overflow-y: auto;
+            max-height: 80vh;
+            scrollbar-color: #6c757d url('https://cdn.discordapp.com/attachments/1188974807350509640/1250964588388814929/abstract-white-and-gray-color-background-free-vector.png?ex=666cdb0f&is=666b898f&hm=af43007e6056934886fa17c7c4ea395cbbea80f7554f4dc6f4fcd998059ede9b&');
+            scrollbar-width: thin;
+        }
+        .game {
+            flex: 1 0 calc(25% - 20px); /* Ajuste para 4 jogos por linha */
+            margin: 10px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .game img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .play-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6c757d; /* Cinza para os botões */
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .play-button:hover {
+            background-color: #202020; /* Tom mais escuro de cinza ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Verificação de login ao carregar a página
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'login.html';
+        }
+
+        // Exibição do usuário logado na barra de navegação
+        document.addEventListener('DOMContentLoaded', function() {
+            var loggedInUser = localStorage.getItem('username');
+            document.getElementById('loggedInUser').textContent = loggedInUser;
+        });
+
+        // Função para logout
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <div class="navbar">
+        <div>
+            <a href="home.html">Home</a>
+            <a href="discovery.html">Discovery</a>
+        </div>
+        <div>
+            <span style="color: white;">Logged in as: <strong id="loggedInUser"></strong></span>
+            <a href="#" onclick="logout()">Logout</a>
+            <img src="https://cdn.discordapp.com/attachments/1175494981524394014/1250866806252507166/Legendary_GAMES-removebg-preview.png?ex=666c7ffe&is=666b2e7e&hm=3cf382c0a5e030bfc5f7bf5a6a9c6127bb3ece22fb995a73b719c15195bb38d4&" alt="Logo">
+        </div>
+    </div>
+
+    <div class="games-section" id="gamesSection">
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/807078799_144x108.png" alt="Legendary Games Image">
+            <br>
+            <button onclick="window.location.href='indexx.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/437465406_144x108.png" alt="Legendary Games Image2">
+            <br>
+            <button onclick="window.location.href='game2.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/419503825_144x108.png" alt="Legendary Games Image3">
+            <br>
+            <button onclick="window.location.href='game3.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/951437131_144x108.png" alt="Legendary Games Image4">
+            <br>
+            <button onclick="window.location.href='game4.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/478784072_144x108.png" alt="Legendary Games Image5">
+            <br>
+            <button onclick="window.location.href='game5.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/550043399_144x108.png" alt="Legendary Games Image6">
+            <br>
+            <button onclick="window.location.href='game6.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/139025103_144x108.png" alt="Legendary Games Image7">
+            <br>
+            <button onclick="window.location.href='game7.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/664860239_144x108.png" alt="Legendary Games Image8">
+            <br>
+            <button onclick="window.location.href='game8.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/469540467_144x108.png" alt="Legendary Games Image9">
+            <br>
+            <button onclick="window.location.href='game9.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn2.scratch.mit.edu/get_image/project/1030331572_144x108.png" alt="Legendary Games Image10">
+            <br>
+            <button onclick="window.location.href='game11.html'" class="play-button">Jogar</button>
+        </div>
+        <div class="game">
+            <img src="" alt="Legendary Games Image10">
+            <br>
+            <button onclick="window.location.href='game11.html'" class="play-button">Jogar</button>
+        </div>
+        </div><body>  
+        </body>
+        </html>
